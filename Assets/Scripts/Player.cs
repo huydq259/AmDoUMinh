@@ -14,16 +14,23 @@ public class Player : MonoBehaviour
     public float groundCheckRadius = .2f;
     public LayerMask whatIsGround;
     private bool isGround;
+<<<<<<< HEAD
+    private int currentHearts;
+    private int currentGolds;
+=======
 
     public GameObject arrowPrefab;
     public Transform spawnPosition;
     public float arrowSpeed = 7f;
+>>>>>>> 41deef5ae23f9cc495764686c47223140f4fed6b
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isGround = true;
         facingRight = true;
         animator = this.gameObject.GetComponent<Animator>();
+        currentHearts = 0;
+        currentGolds = 0;
     }
 
     // Update is called once per frame
@@ -125,5 +132,18 @@ public class Player : MonoBehaviour
         }
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Heart")
+        {
+            currentHearts ++;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Gold")
+        {
+            currentGolds ++;
+            Destroy(collision.gameObject);
+        }
     }
 }

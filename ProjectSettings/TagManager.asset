@@ -5,8 +5,16 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+<<<<<<< HEAD
+  - Heart
+  - Gold
+=======
   - Arrow
+<<<<<<< HEAD
   - DeathZone
+=======
+>>>>>>> 41deef5ae23f9cc495764686c47223140f4fed6b
+>>>>>>> 31eedae97c975d3a42b40eedbb6aec1e7870b9c7
   layers:
   - Default
   - TransparentFX
