@@ -5,8 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+<<<<<<< HEAD
   - Heart
   - Gold
+=======
+  - Arrow
+>>>>>>> 41deef5ae23f9cc495764686c47223140f4fed6b
   layers:
   - Default
   - TransparentFX
