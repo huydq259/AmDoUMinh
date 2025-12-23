@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
     public float groundCheckRadius = .2f;
     public LayerMask whatIsGround;
     private bool isGround;
+
+    public GameObject arrowPrefab;
+    public Transform spawnPosition;
+    public float arrowSpeed = 7f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,12 +40,22 @@ public class Player : MonoBehaviour
         }
         Flip();
         PlayRunAnimation();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("Shoot");
+        }
     }
     private void FixedUpdate()
     {
         transform.position += new Vector3(movement * moveSpeed, 0f, 0f) * Time.fixedDeltaTime;
     }
 
+    public void FireArrow()
+    {
+        GameObject tempArrowPrefab = Instantiate(arrowPrefab, spawnPosition.position, spawnPosition.rotation);
+        tempArrowPrefab.GetComponent<Rigidbody2D>().linearVelocity = spawnPosition.right * arrowSpeed;
+    }
     void PlayRunAnimation()
     {
         if (Mathf.Abs(movement) > 0f)
