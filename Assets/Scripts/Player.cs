@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -98,6 +99,22 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("Jump", false);
         }
+       
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        // In ra log để kiểm tra
+        Debug.Log("Nhân vật đã rơi xuống vực!");
+
+        // Load lại Scene hiện tại ngay lập tức
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnDrawGizmosSelected()
