@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -13,21 +14,20 @@ public class Player : MonoBehaviour
     public float groundCheckRadius = .2f;
     public LayerMask whatIsGround;
     private bool isGround;
-<<<<<<< HEAD
+
     private int currentHearts;
     private int currentGolds;
-=======
 
     public GameObject arrowPrefab;
     public Transform spawnPosition;
     public float arrowSpeed = 7f;
->>>>>>> 41deef5ae23f9cc495764686c47223140f4fed6b
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isGround = true;
         facingRight = true;
-        animator = this.gameObject.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         currentHearts = 0;
         currentGolds = 0;
     }
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             Jump();
         }
         Collider2D collInfo = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
-        if (collInfo == true)
+        if (collInfo != null)
         {
             isGround = true;
         }
@@ -60,8 +60,14 @@ public class Player : MonoBehaviour
 
     public void FireArrow()
     {
-        GameObject tempArrowPrefab = Instantiate(arrowPrefab, spawnPosition.position, spawnPosition.rotation);
-        tempArrowPrefab.GetComponent<Rigidbody2D>().linearVelocity = spawnPosition.right * arrowSpeed;
+        if (arrowPrefab == null || spawnPosition == null) return;
+        GameObject temp = Instantiate(arrowPrefab, spawnPosition.position, spawnPosition.rotation);
+        Rigidbody2D rbArrow = temp.GetComponent<Rigidbody2D>();
+        if (rbArrow != null)
+        {
+            Vector2 dir = (Vector2)spawnPosition.right;
+            rbArrow.linearVelocity = dir * arrowSpeed;
+        }
     }
     void PlayRunAnimation()
     {
@@ -69,7 +75,7 @@ public class Player : MonoBehaviour
         {
             animator.SetFloat("Run", 1f);
         }
-        else if (movement < 0.1f)
+        else
         {
             animator.SetFloat("Run", 0f);
         }
@@ -91,9 +97,9 @@ public class Player : MonoBehaviour
     {
         if (isGround == true)
         {
-            Vector2 velocity = rb.linearVelocity;
+            Vector2 velocity = rb != null ? rb.linearVelocity : Vector2.zero;
             velocity.y = jumpHeight;
-            rb.linearVelocity = velocity;
+            if (rb != null) rb.linearVelocity = velocity;
             isGround = false;
             animator.SetBool("Jump", true);
         }
@@ -101,12 +107,17 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             animator.SetBool("Jump", false);
+            isGround = true;
         }
     }
-
+  
+    void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     private void OnDrawGizmosSelected()
     {
         if (groundCheckPoint == null)
@@ -118,12 +129,17 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Heart")
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            Die();
+        }
+
+        if (collision.gameObject.CompareTag("Heart"))
         {
             currentHearts ++;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Gold")
+        else if (collision.gameObject.CompareTag("Gold"))
         {
             currentGolds ++;
             Destroy(collision.gameObject);
