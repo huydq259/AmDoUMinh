@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     public GameObject arrowPrefab;
     public Transform spawnPosition;
     public float arrowSpeed = 7f;
+
+    public Text currentHeart_Text;
+    public Text currentCoin_Text;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
