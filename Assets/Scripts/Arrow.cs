@@ -8,6 +8,4 @@ public class Arrow : MonoBehaviour
     {
         Destroy(this.gameObject, 5f);
     }
-
-
 }

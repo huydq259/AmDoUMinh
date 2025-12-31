@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5550687509567959998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6880674657980408688}
+  - component: {fileID: 7995693529989907844}
+  - component: {fileID: 4338032859997324019}
+  m_Layer: 0
+  m_Name: DeadLine
+  m_TagString: DeadLine
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6880674657980408688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550687509567959998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &7995693529989907844
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550687509567959998}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!68 &4338032859997324019
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550687509567959998}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -12.156694, y: 8.74252}
+  - {x: -11.98843, y: -0.956779}
+  - {x: -5.2901015, y: -9.804997}
+  - {x: 17.93565, y: -10.471267}
+  - {x: 25.34581, y: -6.46079}
+  - {x: 44.676594, y: -3.774601}
+  - {x: 56.747307, y: -3.9770532}
+  - {x: 56.755596, y: -1.0453081}
+  - {x: 87.86585, y: -5.0672064}
+  - {x: 136.2114, y: -10.740996}
+  - {x: 136.32207, y: -10.740996}
+  - {x: 136.40793, y: -5.125721}
+  - {x: 147.53862, y: -3.4773483}
+  - {x: 159.45837, y: -4.767668}
+  - {x: 187.02072, y: -4.5966225}
+  - {x: 194.61673, y: -4.7068233}
+  - {x: 211.59398, y: -6.43511}
+  - {x: 230.60393, y: -8.359093}
+  - {x: 235.89183, y: 1.1344776}
+  - {x: 239.85446, y: 2.3158417}
+  - {x: 249.47687, y: 2.7173226}
+  - {x: 251.2041, y: -0.48215413}
+  - {x: 259.26993, y: -1.7862226}
+  - {x: 280.16, y: -2.0526032}
+  - {x: 293.8025, y: -2.7895985}
+  - {x: 319.82404, y: -2.9098382}
+  - {x: 359.6424, y: -3.0781164}
+  - {x: 368.0656, y: -2.7367666}
+  - {x: 373.31537, y: -2.7751672}
+  - {x: 380.65482, y: -3.2965004}
+  - {x: 382.6021, y: -3.2548432}
+  - {x: 383.1854, y: -2.6514897}
+  - {x: 383.5434, y: -3.7254782}
+  - {x: 384.6862, y: -3.3229942}
+  - {x: 409.33942, y: -2.7328405}
+  - {x: 416.2798, y: -1.9707458}
+  - {x: 422.5893, y: -2.852759}
+  - {x: 428.87393, y: -1.316566}
+  - {x: 494.1492, y: -1.1310616}
+  - {x: 517.4424, y: -4.6540756}
+  - {x: 534.385, y: -3.963449}
+  - {x: 551.25464, y: -3.905633}
+  - {x: 560.4454, y: -4.555035}
+  - {x: 565.97955, y: -2.9336405}
+  - {x: 570.3059, y: -2.8162823}
+  - {x: 573.9818, y: -3.8400183}
+  - {x: 591.9141, y: -4.521266}
+  - {x: 612.8362, y: -4.4530387}
+  - {x: 619.40265, y: -5.4681444}
+  - {x: 648.15344, y: 8.859946}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
