@@ -1005,9 +1005,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 50696701}
     m_Modifications:
     - target: {fileID: 584754895179585921, guid: 0a633d89b1cc6a94bb82181d73f64e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 584754895179585921, guid: 0a633d89b1cc6a94bb82181d73f64e6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1101494640}
+    - target: {fileID: 584754895179585921, guid: 0a633d89b1cc6a94bb82181d73f64e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SmartPlayButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 584754895179585921, guid: 0a633d89b1cc6a94bb82181d73f64e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Scene1
+      objectReference: {fileID: 0}
     - target: {fileID: 870561308280135574, guid: 0a633d89b1cc6a94bb82181d73f64e6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
