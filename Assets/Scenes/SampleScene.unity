@@ -14745,7 +14745,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439519464363701991, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439519464363701991, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 439519464363701991, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
       propertyPath: m_SortingLayerID
@@ -14756,12 +14760,20 @@ PrefabInstance:
       value: Chest
       objectReference: {fileID: 0}
     - target: {fileID: 2777633014162118169, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1799
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777633014162118169, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777633014162118169, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 616.49
+      value: 616.3301
       objectReference: {fileID: 0}
     - target: {fileID: 2777633014162118169, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.18
+      value: -1.084
       objectReference: {fileID: 0}
     - target: {fileID: 2777633014162118169, guid: 3f587ba79dc5f0148918b49068bb9db2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14975,9 +14987,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 2287966240433672000, guid: ab95b10055d61014fb676815fac70989, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318955728364061959, guid: ab95b10055d61014fb676815fac70989, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4406745518260135730, guid: ab95b10055d61014fb676815fac70989, type: 3}
       propertyPath: m_LayerOverridePriority
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670532973268841106, guid: ab95b10055d61014fb676815fac70989, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5284612088426821921, guid: ab95b10055d61014fb676815fac70989, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15021,7 +15045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6896068574682090215, guid: ab95b10055d61014fb676815fac70989, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

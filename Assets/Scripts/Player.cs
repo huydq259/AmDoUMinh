@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -165,6 +165,7 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.CompareTag("Chest")) {
             isVictory = true;
+            GameManager.instance.TriggerVictoryUI();
         }
 
         if (coll.gameObject.tag == "Heart") {
@@ -202,7 +203,7 @@ public class Player : MonoBehaviour
 
     void Die() {
         Debug.Log(this.gameObject.name + " Died!");
-        CameraShake.instance.Shake(4f, .18f);
+        //CameraShake.instance.Shake(4f, .18f);
         AudioManager.instance.PlaySound("Explosion");
         GameObject tempExplosion = Instantiate(explosionPrefab, explosionSpawnPoint.position, Quaternion.identity);
         Destroy(tempExplosion, .901f);
