@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     public GameObject arrowPrefab;
     public Transform spawnPosition;
     public float arrowSpeed = 7f;
+
+    public Text currentHeart_Text;
+    public Text currentGold_Text;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -137,11 +140,13 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Heart"))
         {
             currentHearts ++;
+            currentHeart_Text.text = currentHearts.ToString();
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Gold"))
         {
             currentGolds ++;
+            currentGold_Text.text = currentGolds.ToString();
             Destroy(collision.gameObject);
         }
     }
