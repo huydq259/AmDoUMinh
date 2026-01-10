@@ -60,4 +60,11 @@ public class SceneManagement : MonoBehaviour {
         AudioManager.instance.PlaySound("Click");
         Application.Quit();
     }
+
+    public void NextLevel() {
+        Debug.Log("Next Level");
+        AudioManager.instance.PlaySound("Click");
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
+    }
 }
