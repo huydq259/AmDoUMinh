@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3378882512360755867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4392659901291266490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013189361300002978}
+  m_Layer: 0
+  m_Name: WallCheckPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2013189361300002978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392659901291266490}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.04, y: -1.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3378882512360755867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6295209867026088080
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,13 +123,14 @@ Transform:
   m_GameObject: {fileID: 7988199793180541160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.5, y: 0.24, z: 0}
+  m_LocalPosition: {x: 33.21, y: 0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5434112203817992171}
   - {fileID: 4816157715124172233}
   - {fileID: 5658655413747916606}
+  - {fileID: 2013189361300002978}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2245773153764024965
@@ -143,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2126026333
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -8738615950573110220, guid: c74fc3fb229b22243823587ad98838a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -281,6 +313,9 @@ MonoBehaviour:
   textSpawnPoint: {fileID: 4816157715124172233}
   attackPoint: {fileID: 5658655413747916606}
   attackRadius: 1.71
+  offset: {x: 0, y: 0, z: 0}
+  wallCheckPoint: {fileID: 2013189361300002978}
+  wallCheckDistance: 0.5
 --- !u!1 &8462534270202645182
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 8462534270202645182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.718, y: -1.781, z: 0}
+  m_LocalPosition: {x: -0.718, y: -1.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

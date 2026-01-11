@@ -766,6 +766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 50696701}
     m_Modifications:
+    - target: {fileID: 44716438038984461, guid: f9931e4a47878344997f67232891ea8f, type: 3}
+      propertyPath: m_Text
+      value: "CH\u01A0I TH\u1EAENG C\xD3 QU\xC0 NH\xC9"
+      objectReference: {fileID: 0}
     - target: {fileID: 870561308280135574, guid: f9931e4a47878344997f67232891ea8f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -885,6 +889,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 50696701}
     m_Modifications:
+    - target: {fileID: 44716438038984461, guid: e0687d3e3ddc9f5448e8cd391d4f1840, type: 3}
+      propertyPath: m_Text
+      value: Thanks to everyone
+      objectReference: {fileID: 0}
     - target: {fileID: 870561308280135574, guid: e0687d3e3ddc9f5448e8cd391d4f1840, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

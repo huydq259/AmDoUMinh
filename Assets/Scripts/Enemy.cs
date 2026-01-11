@@ -159,6 +159,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
+        // Nếu đụng vào vật thể có Rigidbody2D thì quay đầu
+        if (collision.gameObject.GetComponent<Rigidbody2D>() != null) {
+            if (facingLeft) {
+                transform.eulerAngles = new Vector3(0f, -180f, 0f);
+                facingLeft = false;
+            }
+            else {
+                transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                facingLeft = true;
+            }
+        }
+    }
+
     public void ShakeCamera() {
         CameraShake.instance.Shake(4f, .18f);
     }
