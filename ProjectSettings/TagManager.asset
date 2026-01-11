@@ -9,6 +9,12 @@ TagManager:
   - Gold
   - Arrow
   - DeathZone
+  - Enemy
+  - Arrow_Enemy
+  - Diamond
+  - Chest
+  - Trap
+  - DeadLine
   layers:
   - Default
   - TransparentFX
@@ -45,6 +51,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG1
+    uniqueID: 782425751
+    locked: 0
+  - name: BG2
+    uniqueID: 4114925073
     locked: 0
   m_RenderingLayers:
   - Default
