@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2126026333
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8583784707032119535, guid: 4b7a40eae5214324fa9f423775bc4309, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -204,13 +204,14 @@ MonoBehaviour:
   attackRangeRadius: 8.99
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   player: {fileID: 9158141941879785636, guid: 7f3700648bf1c45458d04a40b992a748, type: 3}
   floatingTextPrefab: {fileID: 2159066071895522019, guid: cfb3fa2ead402c444b96174f06bb091b, type: 3}
   textSpawnPoint: {fileID: 1441047263079346864}
   firePoint: {fileID: 1439770566497956506}
   arrowPrefab: {fileID: 4509488514821031087, guid: 0b77ec1ab24ccf54d9b128f8e78342dc, type: 3}
   arrowVelocity: 10
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &5736525037247929493
 GameObject:
   m_ObjectHideFlags: 0
