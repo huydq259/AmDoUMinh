@@ -4093,6 +4093,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4843522359752259132, guid: 24e58283b0d9e8b438b63109a10e7d6c, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7988199793180541160, guid: 24e58283b0d9e8b438b63109a10e7d6c, type: 3}
       propertyPath: m_Name
       value: Enemy_1 (3)
@@ -4518,11 +4522,11 @@ PrefabInstance:
       objectReference: {fileID: 743987891}
     - target: {fileID: 9158141941879785636, guid: 7f3700648bf1c45458d04a40b992a748, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.98
+      value: 7.9
       objectReference: {fileID: 0}
     - target: {fileID: 9158141941879785636, guid: 7f3700648bf1c45458d04a40b992a748, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9158141941879785636, guid: 7f3700648bf1c45458d04a40b992a748, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7291,6 +7295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1641270936}
     m_Modifications:
+    - target: {fileID: 1121466599226616689, guid: b3a0c3eb7de7f1342b7985ce48a9012b, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3374291784949920552, guid: b3a0c3eb7de7f1342b7985ce48a9012b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 294.68
@@ -11447,7 +11455,7 @@ Transform:
   m_GameObject: {fileID: 1762792819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.48, y: -1.04547, z: -10}
+  m_LocalPosition: {x: 11.4, y: 8.88453, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14467,6 +14475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3591179828005731002}
     m_Modifications:
+    - target: {fileID: -4877303401731007381, guid: 15370bb0afef5b241883ba9a9817cc92, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 951303644808425423, guid: 15370bb0afef5b241883ba9a9817cc92, type: 3}
       propertyPath: m_Name
       value: Saw (1)
@@ -16331,7 +16343,7 @@ Transform:
   m_GameObject: {fileID: 426627715736995657}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.48, y: -1.04547, z: -10}
+  m_LocalPosition: {x: 11.4, y: 8.88453, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17388,6 +17400,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3591179828005731002}
     m_Modifications:
+    - target: {fileID: -4877303401731007381, guid: 15370bb0afef5b241883ba9a9817cc92, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 951303644808425423, guid: 15370bb0afef5b241883ba9a9817cc92, type: 3}
       propertyPath: m_Name
       value: Saw
