@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }
 
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3(movement * moveSpeed, 0f, 0f) * Time.fixedDeltaTime;
+        rb.linearVelocity = new Vector2(movement * moveSpeed, rb.linearVelocity.y);
     }
 
     public void FireArrow() {
@@ -120,15 +120,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Jump() {
-
-        if (isGround == true && jumpCount > 0) {
+    void Jump()
+    {
+        // Chỉ cần còn lượt nhảy là được nhảy (bất kể đang dưới đất hay trên trời)
+        if (jumpCount > 0)
+        {
+            // 1. Tạo lực nhảy
             Vector2 velocity = rb.linearVelocity;
             velocity.y = jumpHeight;
             rb.linearVelocity = velocity;
-            isGround = false;
+
+            // 2. Cập nhật trạng thái
+            isGround = false; // Rời mặt đất
             animator.SetBool("Jump", true);
             AudioManager.instance.PlaySound("Dash");
+
+            // 3. Trừ lượt nhảy đi 1
             jumpCount--;
         }
     }

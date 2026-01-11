@@ -32,7 +32,7 @@ public class SceneManagement : MonoBehaviour {
         // KIỂM TRA: Nếu đang đứng ở Menu thì vào Màn 1
         if (tenManHienTai == "Menu")
         {
-            SceneManager.LoadScene("Scene1"); // Nhớ thay "Scene1" đúng tên màn 1 của bạn
+            SceneManager.LoadScene("man1"); // Nhớ thay "Scene1" đúng tên màn 1 của bạn
         }
         // CÒN LẠI: Nếu đang chơi (ở Màn 1 hoặc Màn 2) thì load lại màn đó
         else
@@ -59,5 +59,12 @@ public class SceneManagement : MonoBehaviour {
         Debug.Log("Exit Game");
         AudioManager.instance.PlaySound("Click");
         Application.Quit();
+    }
+
+    public void NextLevel() {
+        Debug.Log("Next Level");
+        AudioManager.instance.PlaySound("Click");
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
     }
 }

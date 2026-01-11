@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius = 1f;
     public Vector3 offset;
+    public Transform wallCheckPoint; // Điểm kiểm tra tường
+    public float wallCheckDistance = 0.5f; // Khoảng cách kiểm tra
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -76,18 +78,25 @@ public class Enemy : MonoBehaviour
             }  
         }
         else {
-
             transform.Translate(Vector2.left * Time.deltaTime * walkSpeed);
+            // 1. Kiểm tra mặt đất (logic cũ)
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, distance, whatIsGround);
 
-            RaycastHit2D hitInfo = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, distance, whatIsGround);
+            // 2. Kiểm tra tường (logic MỚI)
+            // Bắn tia sang trái hoặc phải tùy theo hướng đang nhìn
+            Vector2 wallCheckDir = facingLeft ? Vector2.left : Vector2.right;
+            RaycastHit2D wallInfo = Physics2D.Raycast(wallCheckPoint.position, wallCheckDir, wallCheckDistance, whatIsGround);
+            // Điều kiện quay đầu: (Hết đường HOẶC Đụng tường)
+            if (groundInfo == false || wallInfo == true)
+            {
 
-            if (hitInfo == false) {
-
-                if (facingLeft) {
+                if (facingLeft)
+                {
                     transform.eulerAngles = new Vector3(0f, -180f, 0f);
                     facingLeft = false;
                 }
-                else {
+                else
+                {
                     transform.eulerAngles = new Vector3(0f, 0f, 0f);
                     facingLeft = true;
                 }
@@ -135,6 +144,11 @@ public class Enemy : MonoBehaviour
         }
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        if (wallCheckPoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(wallCheckPoint.position, (facingLeft ? Vector2.left : Vector2.right) * wallCheckDistance);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
