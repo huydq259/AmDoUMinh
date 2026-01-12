@@ -70,3 +70,8 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ce678530a4179aa45b4425407abcc43f, type: 3}
+    name: BGM
+    volume: 0.251
+    loop: 1
+    source: {fileID: 0}

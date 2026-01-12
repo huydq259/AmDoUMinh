@@ -64,7 +64,23 @@ public class SceneManagement : MonoBehaviour {
     public void NextLevel() {
         Debug.Log("Next Level");
         AudioManager.instance.PlaySound("Click");
-        SceneManager.LoadScene("SampleScene");
+        
+        // Lấy tên màn hiện tại
+        string currentScene = SceneManager.GetActiveScene().name;
+        
+        // Xác định màn tiếp theo dựa trên màn hiện tại
+        // man1 -> Scene3.1 -> SampleScene
+        if (currentScene == "man1") {
+            SceneManager.LoadScene("Scene3.1");
+        }
+        else if (currentScene == "Scene3.1") {
+            SceneManager.LoadScene("SampleScene");
+        }
+        else {
+            // Mặc định: quay về Menu nếu đã hết màn
+            SceneManager.LoadScene("Menu");
+        }
+        
         Time.timeScale = 1f;
     }
 }

@@ -23,7 +23,9 @@ public class AudioManager : MonoBehaviour {
             s.source.loop = s.loop;
             s.source.volume = s.volume;
         }
-        //PlaySound("Theme");
+        
+        // Phát nhạc nền khi game bắt đầu
+        PlaySound("BGM");
     }
 
     public void PlaySound(string name) {
