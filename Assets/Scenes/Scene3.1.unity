@@ -1068,6 +1068,10 @@ PrefabInstance:
       propertyPath: currentDiamond_Text
       value: 
       objectReference: {fileID: 19756062}
+    - target: {fileID: 3417413134517327646, guid: 7f3700648bf1c45458d04a40b992a748, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 9158141941879785636, guid: 7f3700648bf1c45458d04a40b992a748, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.33
