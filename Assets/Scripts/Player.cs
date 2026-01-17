@@ -49,9 +49,60 @@ public class Player : MonoBehaviour
             Destroy(this);
         }
 
-        currentDiamonds = 0;
+        // Load dữ liệu từ GameData nếu có
+        LoadFromGameData();
+        
         jumpCount = totallJumps;
         isVictory = false;
+    }
+
+    /// <summary>
+    /// Load dữ liệu từ GameData (số tim và kim cương đã lưu)
+    /// </summary>
+    void LoadFromGameData()
+    {
+        if (GameData.instance != null && GameData.instance.HasSavedData())
+        {
+            maxHealth = GameData.instance.currentHealth;
+            currentDiamonds = GameData.instance.currentDiamonds;
+            Debug.Log("Player: Loaded from GameData - Health: " + maxHealth + ", Diamonds: " + currentDiamonds);
+        }
+        else
+        {
+            // Nếu là game mới, sử dụng giá trị mặc định (5 hearts, 0 diamonds)
+            maxHealth = 5; // Force reset về 5 (không dùng giá trị từ Inspector)
+            currentDiamonds = 0;
+            Debug.Log("Player: New game - Health: " + maxHealth + ", Diamonds: " + currentDiamonds);
+        }
+        
+        // Cập nhật UI ngay sau khi load dữ liệu
+        UpdateUI();
+    }
+    
+    /// <summary>
+    /// Cập nhật UI hiển thị số tim và kim cương
+    /// </summary>
+    void UpdateUI()
+    {
+        if (currentHeart_Text != null)
+        {
+            currentHeart_Text.text = maxHealth.ToString();
+        }
+        if (currentDiamond_Text != null)
+        {
+            currentDiamond_Text.text = currentDiamonds.ToString();
+        }
+    }
+
+    /// <summary>
+    /// Lưu dữ liệu vào GameData (gọi trước khi chuyển scene)
+    /// </summary>
+    public void SaveToGameData()
+    {
+        if (GameData.instance != null)
+        {
+            GameData.instance.SavePlayerData(maxHealth, currentDiamonds);
+        }
     }
 
     // Update is called once per frame
@@ -172,6 +223,8 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.CompareTag("Chest")) {
             isVictory = true;
+            // Lưu dữ liệu trước khi chuyển màn
+            SaveToGameData();
             GameManager.instance.TriggerVictoryUI();
         }
 

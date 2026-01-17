@@ -32,6 +32,11 @@ public class SceneManagement : MonoBehaviour {
         // KIỂM TRA: Nếu đang đứng ở Menu thì vào Màn 1
         if (tenManHienTai == "Menu")
         {
+            // Reset dữ liệu game về mặc định khi bắt đầu từ Menu
+            if (GameData.instance != null)
+            {
+                GameData.instance.ResetToDefault();
+            }
             SceneManager.LoadScene("man1"); // Nhớ thay "Scene1" đúng tên màn 1 của bạn
         }
         // CÒN LẠI: Nếu đang chơi (ở Màn 1 hoặc Màn 2) thì load lại màn đó
@@ -75,6 +80,17 @@ public class SceneManagement : MonoBehaviour {
         }
         else if (currentScene == "Scene3.1") {
             SceneManager.LoadScene("SampleScene");
+        }
+        else if (currentScene == "SampleScene") {
+            // Đây là màn cuối - người chơi đã phá đảo!
+            if (GameData.instance != null)
+            {
+                GameData.instance.isGameCompleted = true;
+                GameData.instance.showNameInput = true;
+                Debug.Log("Game Completed! Final score: " + GameData.instance.currentDiamonds);
+            }
+            // Quay về Menu để hiển thị popup nhập tên
+            SceneManager.LoadScene("Menu");
         }
         else {
             // Mặc định: quay về Menu nếu đã hết màn
